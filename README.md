@@ -1,8 +1,8 @@
-# Your Car
+# Schedule
 
 ## <span style="font-size:15px">SERVER SITE</span>
 
-Server , [Live Here](https://your-car-server.vercel.app/)
+Server , [Live Here](https://dev-soft-task.vercel.app/)
 
 > ###### Server is Deployed in Vercel
 
@@ -10,10 +10,7 @@ Server , [Live Here](https://your-car-server.vercel.app/)
 
 - CRUD Operations.
 - MongoDb database management used.
-- Admin Verification.
 - JWT Verification
-- Searching facility.
-- Pagination Facility.
 
 ### `Notable Used Technology`
 
@@ -21,7 +18,7 @@ Server , [Live Here](https://your-car-server.vercel.app/)
 - Express
 - MongoDb
 - Cors
-- Stripe
 - Dotenv
 - Jwt
+
 # devSoft-task-server
