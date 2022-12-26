@@ -28,34 +28,6 @@ async function run() {
 
         console.log('mongo db connect');
 
-        function jwtVerification(req, res, next) {
-            const authHeaders = req.headers.authorization;
-            console.log('authHeaders : ', authHeaders);
-            if (!authHeaders) {
-                return res.status(401).send({ message: 'unauthorized access !' })
-            }
-            const token = authHeaders.split(' ')[1];
-            jwt.verify(token, process.env.SECRET, function (err, decoded) {
-                if (err) {
-                    return res.status(403).send({ message: 'Forbidden access !' })
-                }
-                else {
-                    req.decoded = decoded;
-                    next();
-                }
-            });
-        }
-        async function verifyAdmin(req, res, next) {
-            const userId = req.decoded.uid;
-            const query = { uid: userId };
-            const user = await userCollection.findOne(query);
-            if (user.role === 'admin') {
-                next();
-            }
-            else {
-                return res.status(403).send({ message: 'Forbidden Access' });
-            }
-        }
 
         app.post('/jwt', async (req, res) => {
             const data = req.body;
